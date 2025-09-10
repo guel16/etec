@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url('Futura Std Extra Bold Condensed Oblique.ttf');
+}
+
+body {
+    padding-top: 80px;
+    background-color: #F4F4F4;
+    font-family: 'Pokemon', 'Helvetica Neue', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(90deg, #111, #333);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 25px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6200;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ff6200;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.icons a {
+    color: #fff;
+    margin-left: 25px;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icons a:hover {
+    color: #ff6200;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#noticias, #outras-noticias {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+#outras-noticias h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.noticia {
+    width: 30%;
+    min-width: 250px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.noticia:hover {
+    transform: translateY(-5px);
+}
+
+.noticia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.noticia h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.noticia p {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.noticia button {
+    background-color: #ff6200;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.noticia button:hover {
+    background-color: #e05500;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle:checked ~ nav {
+        display: block;
+    }
+
+    .noticia {
+        width: 100%;
+    }
+}
+#noticia p{
+    color: red;
+}
